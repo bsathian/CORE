@@ -4070,6 +4070,47 @@ protected:
   vector<vector<int> > mus_nStationHits_;
   TBranch *mus_nStationHits_branch;
   bool mus_nStationHits_isLoaded;
+
+  TBranch *hyp_FVFit_p4_branch;
+  vector <LorentzVector> hyp_FVFit_p4_;
+  bool hyp_FVFit_p4_isloaded;
+  TBranch *hyp_FVFit_v4_branch;
+  vector<LorentzVector>hyp_FVFit_v4_;
+  bool hyp_FVFit_v4_isloaded;
+  TBranch *hyp_FVFit_chi2ndf_branch;
+  vector<float> hyp_FVFit_chi2ndf_;
+  bool hyp_FVFit_chi2ndf_isloaded;
+  TBranch *hyp_FVFit_prob_branch;
+  vector<float> hyp_FVFit_prob_;
+  bool hyp_FVFit_prob_isloaded;
+  TBranch *hyp_FVFit_v4cxx_branch;
+  vector<float> hyp_FVFit_v4cxx_;
+  bool hyp_FVFit_v4cxx_isloaded;
+  TBranch *hyp_FVFit_v4cxy_branch;
+  vector<float> hyp_FVFit_v4cxy_;
+  bool hyp_FVFit_v4cxy_isloaded;
+  TBranch *hyp_FVFit_v4cxz_branch;
+  vector<float> hyp_FVFit_v4cxz_;
+  bool hyp_FVFit_v4cxz_isloaded;
+  TBranch *hyp_FVFit_v4cyy_branch;
+  vector<float> hyp_FVFit_v4cyy_;
+  bool hyp_FVFit_v4cyy_isloaded;
+  TBranch *hyp_FVFit_v4cyz_branch;
+  vector<float> hyp_FVFit_v4cyz_;
+  bool hyp_FVFit_v4cyz_isloaded;
+  TBranch *hyp_FVFit_v4czz_branch;
+  vector<float> hyp_FVFit_v4czz_;
+  bool hyp_FVFit_v4czz_isloaded;
+  TBranch* hyp_FVFit_ndf_branch;
+  vector<int> hyp_FVFit_ndf_;
+  bool hyp_FVFit_ndf_isloaded;
+  TBranch* hyp_FVFit_status_branch;
+  vector<int> hyp_FVFit_status_;
+  bool hyp_FVFit_status_isloaded;
+
+
+
+
 public:
   void Init(TTree *tree);
   void GetEntry(unsigned int idx);
@@ -5428,6 +5469,19 @@ public:
   float passTauID(TString idName, unsigned int tauIndex);
   float getbtagvalue(TString bDiscriminatorName, unsigned int jetIndex);
   static void progress( int nEventsTotal, int nEventsChain );
+
+  const vector<LorentzVector>& hyp_FVFit_p4();
+  const vector<LorentzVector>& hyp_FVFit_v4();
+  const vector<float>& hyp_FVFit_chi2ndf();
+  const vector<float>& hyp_FVFit_prob();
+  const vector<float>& hyp_FVFit_v4cxx();
+  const vector<float>& hyp_FVFit_v4cxy();
+  const vector<float>& hyp_FVFit_v4cxz();
+  const vector<float>& hyp_FVFit_v4cyy();
+  const vector<float>& hyp_FVFit_v4cyz();
+  const vector<float>& hyp_FVFit_v4czz();
+  const vector<int>& hyp_FVFit_ndf();
+  const vector<int>& hyp_FVFit_status();
 };
 
 #ifndef __CINT__
@@ -6789,5 +6843,19 @@ namespace tas {
   bool passHLTTrigger(TString trigName);
   float passTauID(TString idName, unsigned int tauIndex);
   float getbtagvalue(TString bDiscriminatorName, unsigned int jetIndex);
+
+  const vector<LorentzVector>& hyp_FVFit_p4();
+  const vector<LorentzVector>& hyp_FVFit_v4();
+  const vector<float>& hyp_FVFit_chi2ndf();
+  const vector<float>& hyp_FVFit_prob();
+  const vector<float>& hyp_FVFit_v4cxx();
+  const vector<float>& hyp_FVFit_v4cxy();
+  const vector<float>& hyp_FVFit_v4cxz();
+  const vector<float>& hyp_FVFit_v4cyy();
+  const vector<float>& hyp_FVFit_v4cyz();
+  const vector<float>& hyp_FVFit_v4czz();
+  const vector<int>& hyp_FVFit_ndf();
+  const vector<int>& hyp_FVFit_status();
+
 }
 #endif

@@ -6755,6 +6755,94 @@ void CMS3::Init(TTree *tree) {
     mus_nStationHits_branch = tree->GetBranch(tree->GetAlias("mus_nStationHits"));
     if (mus_nStationHits_branch) { mus_nStationHits_branch->SetAddress(&mus_nStationHits_); }
   }
+
+  hyp_FVFit_p4_branch = nullptr;
+  if(tree->GetAlias("hyp_FVFit_p4"))
+  {
+      hyp_FVFit_p4_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_p4"));
+      if(hyp_FVFit_p4_branch)
+          hyp_FVFit_p4_branch->SetAddress(&hyp_FVFit_p4_);
+  }
+  
+  hyp_FVFit_v4_branch = nullptr;
+  if(tree->GetAlias("hyp_FVFit_v4"))
+  {
+      hyp_FVFit_v4_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_v4"));
+      if(hyp_FVFit_v4_branch)
+          hyp_FVFit_v4_branch->SetAddress(&hyp_FVFit_v4_);
+  }
+  
+  hyp_FVFit_chi2ndf_branch = nullptr;
+  if(tree->GetAlias("hyp_FVFit_chi2ndf"))
+  {
+      hyp_FVFit_chi2ndf_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_chi2ndf"));
+      hyp_FVFit_chi2ndf_branch->SetAddress(&hyp_FVFit_chi2ndf_);
+  }
+
+  hyp_FVFit_prob_branch = nullptr;
+  if(tree->GetAlias("hyp_FVFit_prob"))
+  {
+      hyp_FVFit_prob_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_prob"));
+      hyp_FVFit_prob_branch->SetAddress(&hyp_FVFit_prob_);
+  }
+
+  hyp_FVFit_v4cxx_branch = nullptr;
+  if(tree->GetAlias("hyp_FVFit_v4cxx"))
+  {
+      hyp_FVFit_v4cxx_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_v4cxx"));
+      hyp_FVFit_v4cxx_branch->SetAddress(&hyp_FVFit_v4cxx_);
+  }
+
+  hyp_FVFit_v4cxy_branch = nullptr;
+  if(tree->GetAlias("hyp_FVFit_v4cxy"))
+  {
+      hyp_FVFit_v4cxy_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_v4cxy"));
+      hyp_FVFit_v4cxy_branch->SetAddress(&hyp_FVFit_v4cxy_);
+  }
+
+  hyp_FVFit_v4cxz_branch = nullptr;
+  if(tree->GetAlias("hyp_FVFit_v4cxz"))
+  {
+      hyp_FVFit_v4cxz_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_v4cxz"));
+      hyp_FVFit_v4cxz_branch->SetAddress(&hyp_FVFit_v4cxz_);
+  }
+
+  hyp_FVFit_v4cyy_branch = nullptr;
+  if(tree->GetAlias("hyp_FVFit_v4cyy"))
+  {
+      hyp_FVFit_v4cyy_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_v4cyy"));
+      hyp_FVFit_v4cyy_branch->SetAddress(&hyp_FVFit_v4cyy_);
+  }
+
+  hyp_FVFit_v4cyz_branch = nullptr;
+  if(tree->GetAlias("hyp_FVFit_v4cyz"))
+  {
+      hyp_FVFit_v4cyz_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_v4cyz"));
+      hyp_FVFit_v4cyz_branch->SetAddress(&hyp_FVFit_v4cyz_);
+  }
+
+  hyp_FVFit_v4czz_branch = nullptr;
+  if(tree->GetAlias("hyp_FVFit_v4czz"))
+  {
+      hyp_FVFit_v4czz_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_v4czz"));
+      hyp_FVFit_v4czz_branch->SetAddress(&hyp_FVFit_v4czz_);
+  }
+
+  hyp_FVFit_ndf_branch = nullptr;
+  if(tree->GetAlias("hyp_FVFit_ndf"))
+  {
+      hyp_FVFit_ndf_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_ndf"));
+      hyp_FVFit_ndf_branch->SetAddress(&hyp_FVFit_ndf_);
+  }
+
+  hyp_FVFit_status_branch = nullptr;
+  if(tree->GetAlias("hyp_FVFit_status"))
+  {
+      hyp_FVFit_status_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_status"));
+      hyp_FVFit_status_branch->SetAddress(&hyp_FVFit_status_);
+  }
+
+
   tree->SetMakeClass(0);
 }
 void CMS3::GetEntry(unsigned int idx) {
@@ -8109,6 +8197,19 @@ void CMS3::GetEntry(unsigned int idx) {
   svs_prob_isLoaded = false;
   evt_puppi_calomet_isLoaded = false;
   mus_nStationHits_isLoaded = false;
+
+  hyp_FVFit_p4_isLoaded = false;
+  hyp_FVFit_v4_isLoaded = false;
+  hyp_FVFit_chi2ndf_isLoaded = false;
+  hyp_FVFit_prob_isLoaded = false;
+  hyp_FVFit_v4cxx_isLoaded = false;
+  hyp_FVFit_v4cxy_isLoaded = false;
+  hyp_FVFit_v4cxz_isLoaded = false;
+  hyp_FVFit_v4cyy_isLoaded = false;
+  hyp_FVFit_v4cyz_isLoaded = false;
+  hyp_FVFit_v4czz_isLoaded = false;
+  hyp_FVFit_ndf_isLoaded = false;
+  hyp_FVFit_status_isLoaded = false;
 }
 void CMS3::LoadAllBranches() {
   if (hcalnoise_isolatedNoiseSumEt_branch != 0) hcalnoise_isolatedNoiseSumEt();
@@ -9461,6 +9562,17 @@ void CMS3::LoadAllBranches() {
   if (svs_prob_branch != 0) svs_prob();
   if (evt_puppi_calomet_branch != 0) evt_puppi_calomet();
   if (mus_nStationHits_branch != 0) mus_nStationHits();
+
+  if(hyp_FVFit_p4_branch !=0) hyp_FVFit_p4();
+  if(hyp_FVFit_v4_branch !=0) hyp_FVFit_v4();
+  if(hyp_FVFit_chi2ndf_branch !=0) hyp_FVFit_chi2ndf();
+  if(hyp_FVFit_prob_branch !=0) hyp_FVFit_prob();
+  if(hyp_FVFit_v4cxx_branch !=0) hyp_FVFit_v4cxx();
+  if(hyp_FVFit_v4cxy_branch !=0) hyp_FVFit_v4cxy();
+  if(hyp_FVFit_v4cxz_branch !=0) hyp_FVFit_v4cxz();
+  if(hyp_FVFit_v4cyy_branch !=0) hyp_FVFit_v4cyy();
+  if(hyp_FVFit_v4cyz_branch !=0) hyp_FVFit_v4cyz();
+  if(hyp_FVFit_v4vzz_branch !=0) hyp_FVFit_v4czz();
 }
 const float &CMS3::hcalnoise_isolatedNoiseSumEt() {
   if (not hcalnoise_isolatedNoiseSumEt_isLoaded) {
@@ -25730,6 +25842,235 @@ void CMS3::progress( int nEventsTotal, int nEventsChain ){
     }
   }
 }
+
+const vector<LorentzVector>& CMS3::hyp_FVFit_p4()
+{
+ if(!(hyp_FVFit_p4_isLoaded))
+ {
+     if(hyp_FVFit_p4_branch !=0)
+     {
+         hyp_FVFit_p4_branch->GetEntry(index);
+     }
+     else
+     {
+         std::cout<<"branch hyp_FVFit_p4_branch does not exist"<<std::endl;
+         exit(1);
+     }
+     hyp_FVFit_p4_isLoaded = true
+ }
+ return hyp_FVFit_p4_;
+}
+
+const vector<LorentzVector>& CMS3::hyp_FVFit_v4()
+{
+ if(!(hyp_FVFit_v4_isLoaded))
+ {
+     if(hyp_FVFit_v4_branch !=0)
+     {
+         hyp_FVFit_v4_branch->GetEntry(index);
+     }
+     else
+     {
+         std::cout<<"branch hyp_FVFit_v4_branch does not exist"<<std::endl;
+         exit(1);
+     }
+     hyp_FVFit_v4_isLoaded = true
+ }
+ return hyp_FVFit_v4_;
+
+}
+
+const vector<float>& CMS3::hyp_FVFit_chi2ndf()
+{
+ if(!(hyp_FVFit_chi2ndf_isLoaded))
+ {
+     if(hyp_FVFit_chi2ndf_branch !=0)
+     {
+         hyp_FVFit_chi2ndf_branch->GetEntry(index);
+     }
+     else
+     {
+         std::cout<<"branch hyp_FVFit_chi2ndf_branch does not exist"<<std::endl;
+         exit(1);
+     }
+     hyp_FVFit_chi2ndf_isLoaded = true
+ }
+ return hyp_FVFit_chi2ndf_;
+
+}
+
+const vector<float>& CMS3::hyp_FVFit_prob()
+{
+ if(!(hyp_FVFit_prob_isLoaded))
+ {
+     if(hyp_FVFit_prob_branch !=0)
+     {
+         hyp_FVFit_prob_branch->GetEntry(index);
+     }
+     else
+     {
+         std::cout<<"branch hyp_FVFit_prob_branch does not exist"<<std::endl;
+         exit(1);
+     }
+     hyp_FVFit_prob_isLoaded = true
+ }
+ return hyp_FVFit_prob_;
+
+}
+
+const vector<float>& CMS3::hyp_FVFit_v4cxx()
+{
+ if(!(hyp_FVFit_v4cxx_isLoaded))
+ {
+     if(hyp_FVFit_v4cxx_branch !=0)
+     {
+         hyp_FVFit_v4cxx_branch->GetEntry(index);
+     }
+     else
+     {
+         std::cout<<"branch hyp_FVFit_v4cxx_branch does not exist"<<std::endl;
+         exit(1);
+     }
+     hyp_FVFit_v4cxx_isLoaded = true
+ }
+ return hyp_FVFit_v4cxx_;
+
+}
+
+const vector<float>& CMS3::hyp_FVFit_v4cxy()
+{
+ if(!(hyp_FVFit_v4cxy_isLoaded))
+ {
+     if(hyp_FVFit_v4cxy_branch !=0)
+     {
+         hyp_FVFit_v4cxy_branch->GetEntry(index);
+     }
+     else
+     {
+         std::cout<<"branch hyp_FVFit_v4cxy_branch does not exist"<<std::endl;
+         exit(1);
+     }
+     hyp_FVFit_v4cxy_isLoaded = true
+ }
+ return hyp_FVFit_v4cxy_;
+
+}
+
+const vector<float>& CMS3::hyp_FVFit_v4cxz()
+{
+ if(!(hyp_FVFit_v4cxz_isLoaded))
+ {
+     if(hyp_FVFit_v4cxz_branch !=0)
+     {
+         hyp_FVFit_v4cxz_branch->GetEntry(index);
+     }
+     else
+     {
+         std::cout<<"branch hyp_FVFit_v4cxz_branch does not exist"<<std::endl;
+         exit(1);
+     }
+     hyp_FVFit_v4cxz_isLoaded = true
+ }
+ return hyp_FVFit_v4cxz_;
+
+}
+
+const vector<float>& CMS3::hyp_FVFit_v4cyy()
+{
+ if(!(hyp_FVFit_v4cyy_isLoaded))
+ {
+     if(hyp_FVFit_v4cyy_branch !=0)
+     {
+         hyp_FVFit_v4cyy_branch->GetEntry(index);
+     }
+     else
+     {
+         std::cout<<"branch hyp_FVFit_v4cyy_branch does not exist"<<std::endl;
+         exit(1);
+     }
+     hyp_FVFit_v4cyy_isLoaded = true
+ }
+ return hyp_FVFit_v4cyy_;
+
+}
+
+const vector<float>& CMS3::hyp_FVFit_v4cyz()
+{
+ if(!(hyp_FVFit_v4cyz_isLoaded))
+ {
+     if(hyp_FVFit_v4cyz_branch !=0)
+     {
+         hyp_FVFit_v4cyz_branch->GetEntry(index);
+     }
+     else
+     {
+         std::cout<<"branch hyp_FVFit_v4cyz_branch does not exist"<<std::endl;
+         exit(1);
+     }
+     hyp_FVFit_v4cyz_isLoaded = true
+ }
+ return hyp_FVFit_v4cyz_;
+
+}
+
+const vector<float>& CMS3::hyp_FVFit_zz()
+{
+ if(!(hyp_FVFit_v4czz_isLoaded))
+ {
+     if(hyp_FVFit_v4czz_branch !=0)
+     {
+         hyp_FVFit_v4czz_branch->GetEntry(index);
+     }
+     else
+     {
+         std::cout<<"branch hyp_FVFit_v4czz_branch does not exist"<<std::endl;
+         exit(1);
+     }
+     hyp_FVFit_v4czz_isLoaded = true
+ }
+ return hyp_FVFit_v4czz_;
+
+}
+
+const vector<int>& CMS3::hyp_FVFit_ndf()
+{
+ if(!(hyp_FVFit_ndf_isLoaded))
+ {
+     if(hyp_FVFit_ndf_branch !=0)
+     {
+         hyp_FVFit_ndf_branch->GetEntry(index);
+     }
+     else
+     {
+         std::cout<<"branch hyp_FVFit_ndf_branch does not exist"<<std::endl;
+         exit(1);
+     }
+     hyp_FVFit_ndf_isLoaded = true
+ }
+ return hyp_FVFit_ndf_;
+
+}
+
+const vector<int>& CMS3::hyp_FVFit_status()
+{
+ if(!(hyp_FVFit_status_isLoaded))
+ {
+     if(hyp_FVFit_status_branch !=0)
+     {
+         hyp_FVFit_status_branch->GetEntry(index);
+     }
+     else
+     {
+         std::cout<<"branch hyp_FVFit_status_branch does not exist"<<std::endl;
+         exit(1);
+     }
+     hyp_FVFit_status_isLoaded = true
+ }
+ return hyp_FVFit_status_;
+
+}
+
+
 namespace tas {
   const float &hcalnoise_isolatedNoiseSumEt() { return cms3.hcalnoise_isolatedNoiseSumEt(); }
   const vector<float> &photons_hcalTowerSumEtBcConeDR04() { return cms3.photons_hcalTowerSumEtBcConeDR04(); }
@@ -27084,4 +27425,19 @@ namespace tas {
   bool passHLTTrigger(TString trigName) { return cms3.passHLTTrigger(trigName); }
   float passTauID(TString idName, unsigned int tauIndex) { return cms3.passTauID(idName, tauIndex); }
   float getbtagvalue(TString bDiscriminatorName, unsigned int jetIndex) { return cms3.getbtagvalue(bDiscriminatorName, jetIndex); }
+  
+
+  const vector<LorentzVector>& hyp_FVFit_p4(){ return cms3.hyp_FVFit_p4();}
+  const vector<LorentzVector>& hyp_FVFit_v4(){ return cms3.hyp_FVFit_v4();}
+  const vector<float>& hyp_FVFit_chi2ndf(){ return cms3.hyp_FVFit_chi2ndf();}
+  const vector<float>& hyp_FVFit_prob(){ return cms3.hyp_FVFit_prob();}
+  const vector<float>& hyp_FVFit_v4cxx(){ return cms3.hyp_FVFit_v4cxx();}
+  const vector<float>& hyp_FVFit_v4cxy(){ return cms3.hyp_FVFit_v4cxy();}
+  const vector<float>& hyp_FVFit_v4cxz(){ return cms3.hyp_FVFit_v4cxz();}
+  const vector<float>& hyp_FVFit_v4cyy(){ return cms3.hyp_FVFit_v4cyy();}
+  const vector<float>& hyp_FVFit_v4cyz(){ return cms3.hyp_FVFit_v4cyz();}
+  const vector<float>& hyp_FVFit_v4czz(){ return cms3.hyp_FVFit_v4czz();}
+  const vector<int>& hyp_FVFit_ndf(){ return cms3.hyp_FVFit_ndf();}
+  const vector<int>& hyp_FVFit_status(){ return hyp_FVFit_status();}
+
 }
