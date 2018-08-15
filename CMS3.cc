@@ -6756,90 +6756,100 @@ void CMS3::Init(TTree *tree) {
     if (mus_nStationHits_branch) { mus_nStationHits_branch->SetAddress(&mus_nStationHits_); }
   }
 
-  hyp_FVFit_p4_branch = nullptr;
+  hyp_FVFit_p4_branch = 0;
   if(tree->GetAlias("hyp_FVFit_p4"))
   {
       hyp_FVFit_p4_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_p4"));
       if(hyp_FVFit_p4_branch)
-          hyp_FVFit_p4_branch->SetAddress(&hyp_FVFit_p4_);
+        hyp_FVFit_p4_branch->SetAddress(&hyp_FVFit_p4_);
   }
   
-  hyp_FVFit_v4_branch = nullptr;
+  hyp_FVFit_v4_branch = 0;
   if(tree->GetAlias("hyp_FVFit_v4"))
   {
       hyp_FVFit_v4_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_v4"));
       if(hyp_FVFit_v4_branch)
-          hyp_FVFit_v4_branch->SetAddress(&hyp_FVFit_v4_);
+        hyp_FVFit_v4_branch->SetAddress(&hyp_FVFit_v4_);
   }
   
-  hyp_FVFit_chi2ndf_branch = nullptr;
+  hyp_FVFit_chi2ndf_branch = 0;
   if(tree->GetAlias("hyp_FVFit_chi2ndf"))
   {
       hyp_FVFit_chi2ndf_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_chi2ndf"));
-      hyp_FVFit_chi2ndf_branch->SetAddress(&hyp_FVFit_chi2ndf_);
+      if(hyp_FVFit_chi2ndf_branch)
+        hyp_FVFit_chi2ndf_branch->SetAddress(&hyp_FVFit_chi2ndf_);
   }
 
-  hyp_FVFit_prob_branch = nullptr;
+  hyp_FVFit_prob_branch = 0;
   if(tree->GetAlias("hyp_FVFit_prob"))
   {
       hyp_FVFit_prob_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_prob"));
-      hyp_FVFit_prob_branch->SetAddress(&hyp_FVFit_prob_);
+      if(hyp_FVFit_prob_branch)
+        hyp_FVFit_prob_branch->SetAddress(&hyp_FVFit_prob_);
   }
 
-  hyp_FVFit_v4cxx_branch = nullptr;
+  hyp_FVFit_v4cxx_branch = 0;
   if(tree->GetAlias("hyp_FVFit_v4cxx"))
   {
       hyp_FVFit_v4cxx_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_v4cxx"));
-      hyp_FVFit_v4cxx_branch->SetAddress(&hyp_FVFit_v4cxx_);
+      if(hyp_FVFit_v4cxx_branch)
+        hyp_FVFit_v4cxx_branch->SetAddress(&hyp_FVFit_v4cxx_);
   }
 
-  hyp_FVFit_v4cxy_branch = nullptr;
+  hyp_FVFit_v4cxy_branch = 0;
   if(tree->GetAlias("hyp_FVFit_v4cxy"))
   {
       hyp_FVFit_v4cxy_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_v4cxy"));
-      hyp_FVFit_v4cxy_branch->SetAddress(&hyp_FVFit_v4cxy_);
+      if(hyp_FVFit_v4cxy_branch)
+          hyp_FVFit_v4cxy_branch->SetAddress(&hyp_FVFit_v4cxy_);
   }
 
-  hyp_FVFit_v4cxz_branch = nullptr;
+  hyp_FVFit_v4cxz_branch = 0;
   if(tree->GetAlias("hyp_FVFit_v4cxz"))
   {
       hyp_FVFit_v4cxz_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_v4cxz"));
-      hyp_FVFit_v4cxz_branch->SetAddress(&hyp_FVFit_v4cxz_);
+      if(hyp_FVFit_v4cxz_branch)
+          hyp_FVFit_v4cxz_branch->SetAddress(&hyp_FVFit_v4cxz_);
   }
 
-  hyp_FVFit_v4cyy_branch = nullptr;
+  hyp_FVFit_v4cyy_branch = 0;
   if(tree->GetAlias("hyp_FVFit_v4cyy"))
   {
       hyp_FVFit_v4cyy_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_v4cyy"));
-      hyp_FVFit_v4cyy_branch->SetAddress(&hyp_FVFit_v4cyy_);
+      if(hyp_FVFit_v4cyy_branch)
+          hyp_FVFit_v4cyy_branch->SetAddress(&hyp_FVFit_v4cyy_);
   }
 
-  hyp_FVFit_v4cyz_branch = nullptr;
+  hyp_FVFit_v4cyz_branch = 0;
   if(tree->GetAlias("hyp_FVFit_v4cyz"))
   {
       hyp_FVFit_v4cyz_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_v4cyz"));
-      hyp_FVFit_v4cyz_branch->SetAddress(&hyp_FVFit_v4cyz_);
+      if(hyp_FVFit_v4cyz_branch)
+          hyp_FVFit_v4cyz_branch->SetAddress(&hyp_FVFit_v4cyz_);
   }
 
-  hyp_FVFit_v4czz_branch = nullptr;
+  hyp_FVFit_v4czz_branch = 0;
   if(tree->GetAlias("hyp_FVFit_v4czz"))
   {
       hyp_FVFit_v4czz_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_v4czz"));
-      hyp_FVFit_v4czz_branch->SetAddress(&hyp_FVFit_v4czz_);
+      if(hyp_FVFit_v4czz_branch)
+          hyp_FVFit_v4czz_branch->SetAddress(&hyp_FVFit_v4czz_);
   }
 
-  hyp_FVFit_ndf_branch = nullptr;
+  hyp_FVFit_ndf_branch = 0;
   if(tree->GetAlias("hyp_FVFit_ndf"))
   {
       hyp_FVFit_ndf_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_ndf"));
-      hyp_FVFit_ndf_branch->SetAddress(&hyp_FVFit_ndf_);
+      if(hyp_FVFit_ndf_branch)
+          hyp_FVFit_ndf_branch->SetAddress(&hyp_FVFit_ndf_);
   }
 
-  hyp_FVFit_status_branch = nullptr;
+  hyp_FVFit_status_branch = 0;
   if(tree->GetAlias("hyp_FVFit_status"))
   {
       hyp_FVFit_status_branch = tree->GetBranch(tree->GetAlias("hyp_FVFit_status"));
-      hyp_FVFit_status_branch->SetAddress(&hyp_FVFit_status_);
+      if(hyp_FVFit_status_branch)
+          hyp_FVFit_status_branch->SetAddress(&hyp_FVFit_status_);
   }
 
 
@@ -9572,7 +9582,7 @@ void CMS3::LoadAllBranches() {
   if(hyp_FVFit_v4cxz_branch !=0) hyp_FVFit_v4cxz();
   if(hyp_FVFit_v4cyy_branch !=0) hyp_FVFit_v4cyy();
   if(hyp_FVFit_v4cyz_branch !=0) hyp_FVFit_v4cyz();
-  if(hyp_FVFit_v4vzz_branch !=0) hyp_FVFit_v4czz();
+  if(hyp_FVFit_v4czz_branch !=0) hyp_FVFit_v4czz();
 }
 const float &CMS3::hcalnoise_isolatedNoiseSumEt() {
   if (not hcalnoise_isolatedNoiseSumEt_isLoaded) {
@@ -25856,7 +25866,7 @@ const vector<LorentzVector>& CMS3::hyp_FVFit_p4()
          std::cout<<"branch hyp_FVFit_p4_branch does not exist"<<std::endl;
          exit(1);
      }
-     hyp_FVFit_p4_isLoaded = true
+     hyp_FVFit_p4_isLoaded = true;
  }
  return hyp_FVFit_p4_;
 }
@@ -25874,7 +25884,7 @@ const vector<LorentzVector>& CMS3::hyp_FVFit_v4()
          std::cout<<"branch hyp_FVFit_v4_branch does not exist"<<std::endl;
          exit(1);
      }
-     hyp_FVFit_v4_isLoaded = true
+     hyp_FVFit_v4_isLoaded = true;
  }
  return hyp_FVFit_v4_;
 
@@ -25893,7 +25903,7 @@ const vector<float>& CMS3::hyp_FVFit_chi2ndf()
          std::cout<<"branch hyp_FVFit_chi2ndf_branch does not exist"<<std::endl;
          exit(1);
      }
-     hyp_FVFit_chi2ndf_isLoaded = true
+     hyp_FVFit_chi2ndf_isLoaded = true;
  }
  return hyp_FVFit_chi2ndf_;
 
@@ -25912,7 +25922,7 @@ const vector<float>& CMS3::hyp_FVFit_prob()
          std::cout<<"branch hyp_FVFit_prob_branch does not exist"<<std::endl;
          exit(1);
      }
-     hyp_FVFit_prob_isLoaded = true
+     hyp_FVFit_prob_isLoaded = true;
  }
  return hyp_FVFit_prob_;
 
@@ -25931,7 +25941,7 @@ const vector<float>& CMS3::hyp_FVFit_v4cxx()
          std::cout<<"branch hyp_FVFit_v4cxx_branch does not exist"<<std::endl;
          exit(1);
      }
-     hyp_FVFit_v4cxx_isLoaded = true
+     hyp_FVFit_v4cxx_isLoaded = true;
  }
  return hyp_FVFit_v4cxx_;
 
@@ -25950,7 +25960,7 @@ const vector<float>& CMS3::hyp_FVFit_v4cxy()
          std::cout<<"branch hyp_FVFit_v4cxy_branch does not exist"<<std::endl;
          exit(1);
      }
-     hyp_FVFit_v4cxy_isLoaded = true
+     hyp_FVFit_v4cxy_isLoaded = true;
  }
  return hyp_FVFit_v4cxy_;
 
@@ -25969,7 +25979,7 @@ const vector<float>& CMS3::hyp_FVFit_v4cxz()
          std::cout<<"branch hyp_FVFit_v4cxz_branch does not exist"<<std::endl;
          exit(1);
      }
-     hyp_FVFit_v4cxz_isLoaded = true
+     hyp_FVFit_v4cxz_isLoaded = true;
  }
  return hyp_FVFit_v4cxz_;
 
@@ -25988,7 +25998,7 @@ const vector<float>& CMS3::hyp_FVFit_v4cyy()
          std::cout<<"branch hyp_FVFit_v4cyy_branch does not exist"<<std::endl;
          exit(1);
      }
-     hyp_FVFit_v4cyy_isLoaded = true
+     hyp_FVFit_v4cyy_isLoaded = true;
  }
  return hyp_FVFit_v4cyy_;
 
@@ -26007,13 +26017,13 @@ const vector<float>& CMS3::hyp_FVFit_v4cyz()
          std::cout<<"branch hyp_FVFit_v4cyz_branch does not exist"<<std::endl;
          exit(1);
      }
-     hyp_FVFit_v4cyz_isLoaded = true
+     hyp_FVFit_v4cyz_isLoaded = true;
  }
  return hyp_FVFit_v4cyz_;
 
 }
 
-const vector<float>& CMS3::hyp_FVFit_zz()
+const vector<float>& CMS3::hyp_FVFit_v4czz()
 {
  if(!(hyp_FVFit_v4czz_isLoaded))
  {
@@ -26026,7 +26036,7 @@ const vector<float>& CMS3::hyp_FVFit_zz()
          std::cout<<"branch hyp_FVFit_v4czz_branch does not exist"<<std::endl;
          exit(1);
      }
-     hyp_FVFit_v4czz_isLoaded = true
+     hyp_FVFit_v4czz_isLoaded = true;
  }
  return hyp_FVFit_v4czz_;
 
@@ -26045,7 +26055,7 @@ const vector<int>& CMS3::hyp_FVFit_ndf()
          std::cout<<"branch hyp_FVFit_ndf_branch does not exist"<<std::endl;
          exit(1);
      }
-     hyp_FVFit_ndf_isLoaded = true
+     hyp_FVFit_ndf_isLoaded = true;
  }
  return hyp_FVFit_ndf_;
 
@@ -26064,7 +26074,7 @@ const vector<int>& CMS3::hyp_FVFit_status()
          std::cout<<"branch hyp_FVFit_status_branch does not exist"<<std::endl;
          exit(1);
      }
-     hyp_FVFit_status_isLoaded = true
+     hyp_FVFit_status_isLoaded = true;
  }
  return hyp_FVFit_status_;
 
